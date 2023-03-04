@@ -8,65 +8,18 @@
         <div class="swiper dishes-slider">
           <div class="swiper-wrapper">
             <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-c.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
+            {% for item in signature %}
+                <div class="swiper-slide h-auto mb-5 text-center">
+                  <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-c.png" alt="Fried Shrimp" height="142">
+                    <div class="position-absolute top-0 end-0 px-5">
+                      <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">${{ item.price }}</span></div>
+                    </div>
+                  </div>
+                  <h4 class="h5 text-uppercase">{{ item.title }}</h4>
+                  <p class="text-muted text-sm">{{ item.desc }}</p>
                 </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
-            <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-b.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
-                </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
-            <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-a.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
-                </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
-            <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-c.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
-                </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
-            <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-b.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
-                </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
-            <!-- item-->
-            <div class="swiper-slide h-auto mb-5 text-center">
-              <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-a.png" alt="Fried Shrimp" height="142">
-                <div class="position-absolute top-0 end-0 px-5">
-                  <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">$17</span></div>
-                </div>
-              </div>
-              <h4 class="h5 text-uppercase">Fried Shrimp</h4>
-              <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
-            </div>
+            {% endfor %}
+
           </div>
           <div class="swiper-pagination"></div>
         </div>
