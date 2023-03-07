@@ -13,7 +13,7 @@
                   <div class="icon icon-md bg-primary border border-primary">
                     <h6 class="text-white mb-0 lh-1 text-uppercase">{{ offer.discount }}% <br> off</h6>
                   </div>
-                </div><img class="img-fluid d-block mx-auto mb-3 mt-4" src="img/dish-d.png" alt="Dish Name" width="200">
+                </div><img class="img-fluid d-block mx-auto mb-3 mt-4" src="{{ offer.photo.url }}" alt="Dish Name" width="200">
                 <h5 class="text-uppercase">{{ offer.title }}</h5>
                 <ul class="list-unstyled mb-0">
                   <li class="text-primary lead price-formatted fw-bold text-sm">{{ offer.total_price }}</li>

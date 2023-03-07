@@ -10,7 +10,7 @@
             <!-- item-->
             {% for item in signature %}
                 <div class="swiper-slide h-auto mb-5 text-center">
-                  <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="img/dish-c.png" alt="Fried Shrimp" height="142">
+                  <div class="position-relative d-inline-block px-lg-5"><img class="d-block mx-auto" src="{{ item.photo.url }}" alt="Fried Shrimp" height="142">
                     <div class="position-absolute top-0 end-0 px-5">
                       <div class="icon icon-sm bg-primary shadow-sm border border-primary mx-lg-5"><span class="text-white">${{ item.price }}</span></div>
                     </div>

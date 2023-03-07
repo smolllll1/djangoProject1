@@ -27,7 +27,7 @@ class Dish(models.Model):
 	is_recomendet = models.BooleanField(default=True)
 	desc = models.TextField(max_length=200, blank=True)
 	price = models.DecimalField(max_digits=8, decimal_places=2)
-	discount = models.DecimalField(max_digits=8, decimal_places=2)
+	discount = models.DecimalField(max_digits=8, decimal_places=0)
 	ingradients = models.CharField(max_length=100)
 	photo = models.ImageField(upload_to='dishes')
 
@@ -42,3 +42,11 @@ class Dish(models.Model):
 
 	class Meta:
 		ordering = ('position', )
+
+class About(models.Model):
+	title = models.CharField(max_length=200, unique=True)
+	body = models.TextField(max_length=4000, blank=True)
+	is_visible = models.BooleanField(default=True)
+
+	def __str__(self):
+		return f'{self.title}'
