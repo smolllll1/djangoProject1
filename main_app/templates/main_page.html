@@ -116,32 +116,7 @@
     {% include 'about.html' %}
     <!-- End About Section-->
     <!-- Services Section-->
-    <section id="services">
-      <div class="container text-center">
-        <header class="mb-5">
-          <h2 class="handwriting-text">We provide the following</h2>
-          <h5 class="text-uppercase text-gray-500 fw-normal">Our Specialities</h5>
-        </header>
-        <div class="row gy-4">
-          <!-- item-->
-          <div class="hover-icon-primary col-md-4">
-            <div class="icon mb-4 mx-auto"><i class="far fa-heart"></i></div>
-            <h5 class="text-uppercase">Clean Environment</h5>
-            <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-          </div>
-          <div class="hover-icon-primary col-md-4">
-            <div class="icon mb-4 mx-auto"><i class="fas fa-user-tie"></i></div>
-            <h5 class="text-uppercase">Lovely &amp; expert chefs</h5>
-            <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-          </div>
-          <div class="hover-icon-primary col-md-4">
-            <div class="icon mb-4 mx-auto"><i class="fas fa-hamburger"></i></div>
-            <h5 class="text-uppercase">Fresh and tasty food</h5>
-            <p class="mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    {% include 'service.html' %}
     <!-- End Services Section-->
     <!-- App Section-->
     <section class="p-0" id="app">
@@ -177,7 +152,7 @@
         <div class="row g-0 bg-white align-items-stretch">
           <!-- Profile Side-->
           <div class="col-lg-6">
-            <div class="dark-overlay p-1 bg-cover bg-center h-100" style="background-image: url(img/event-bg.jpg);">
+            <div class="dark-overlay p-1 bg-cover bg-center h-100" style="background-image: url(static/img/event-bg.jpg);">
               <div class="overlay-content border border-2 border-white text-white p-5 h-100">
                 <div class="d-flex align-items-center">
                   <div class="icon icon-md rounded-0 border-2 border-white me-3">
@@ -203,72 +178,7 @@
     </section>
     <!-- End Events Section-->
     <!-- Gallery Section-->
-    <section id="gallery">
-      <div class="container text-center">
-        <header class="mb-5">
-          <h2 class="handwriting-text">Our Gallery</h2>
-          <h5 class="text-uppercase text-gray-500 fw-normal">Discover the photo gallery</h5>
-        </header>
-        <div class="row g-0">
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg01-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg01.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg02-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg02.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg03-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg03.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg04-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg04.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg05-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg05.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg06-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg06.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg04-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg04.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-          <!-- Item-->
-          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="overlay-hover-primary"><img class="img-fluid" src="img/bg07-small.jpg" alt="image">
-              <div class="overlay-content p-1"><a class="glightbox d-block border border-2 border-white w-100 h-100 d-flex align-items-center justify-content-center text-white text-decoration-none" href="img/bg07.jpg" data-gallery="gallery" data-glightbox="Image Caption">
-                  <div class="icon icon-md border border-white"><i class="fas fa-search fa-2x text-white"></i></div></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    {% include 'gallery.html' %}
     <!-- End Gallery Section-->
     <!-- Booking Section-->
     <section class="bg-light" id="booking">
@@ -278,7 +188,7 @@
           <h5 class="text-uppercase text-gray-500 fw-normal">Enjoy your meal at our restaurant</h5>
         </header>
         <div class="row">
-          <div class="col-lg-10 mx-auto position-relative"><img class="position-absolute top-100 start-100 translate-middle d-none d-lg-block" src="img/vegetables.png" alt="..." width="300">
+          <div class="col-lg-10 mx-auto position-relative"><img class="position-absolute top-100 start-100 translate-middle d-none d-lg-block" src="static/img/vegetables.png" alt="..." width="300">
             <div class="bg-white z-index-20 position-relative">
               <div class="row">
                 <div class="col-lg-10 mx-auto">

@@ -50,3 +50,22 @@ class About(models.Model):
 
 	def __str__(self):
 		return f'{self.title}'
+
+class Service(models.Model):
+	is_visible = models.BooleanField(default=True)
+	title_clean_environment = models.CharField(max_length=100, unique=True)
+	body_clean_environment = models.TextField(max_length=4000, unique=True)
+	title_expert_chefs = models.CharField(max_length=100, unique=True)
+	body_expert_chefs = models.TextField(max_length=4000, unique=True)
+	title_tasty_food = models.CharField(max_length=100, unique=True)
+	body_tasty_food = models.TextField(max_length=4000, unique=True)
+
+	def __str__(self):
+		return 'Service'
+
+class Galerys(models.Model):
+	photo = models.ImageField(upload_to='dishes')
+	is_visible = models.BooleanField(default=True)
+
+	def __str__(self):
+		return 'Photo from galery'
