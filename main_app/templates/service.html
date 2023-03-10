@@ -6,21 +6,21 @@
         </header>
         <div class="row gy-4">
           <!-- item-->
-            {% for i in servis %}
+            {% for serve in servis %}
                 <div class="hover-icon-primary col-md-4">
-                    <div class="icon mb-4 mx-auto"><i class="far fa-heart"></i></div>
-                    <h5 class="text-uppercase">{{ i.title_clean_environment }}</h5>
-                    <p class="mb-0 text-muted">{{ i.body_clean_environment}}</p>
-                  </div>
-                  <div class="hover-icon-primary col-md-4">
-                    <div class="icon mb-4 mx-auto"><i class="fas fa-user-tie"></i></div>
-                    <h5 class="text-uppercase">{{ i.title_expert_chefs }}</h5>
-                    <p class="mb-0 text-muted">{{ i.body_expert_chefs }}</p>
-                  </div>
-                  <div class="hover-icon-primary col-md-4">
-                    <div class="icon mb-4 mx-auto"><i class="fas fa-hamburger"></i></div>
-                    <h5 class="text-uppercase">{{ i.title_tasty_food }}</h5>
-                    <p class="mb-0 text-muted">{{ i.body_tasty_food }}</p>
+                    <div class="icon mb-4 mx-auto">
+                        {% if serve.position == 'M' %}
+                            <i class="fas fa-heart"></i>
+                        {% endif %}
+                        {% if serve.position == 'E' %}
+                            <i class="fas fa-user-tie"></i>
+                        {% endif %}
+                        {% if serve.position == 'F' %}
+                            <i class="fas fa-hamburger"></i>
+                        {% endif %}
+                    </div>
+                    <h5 class="text-uppercase">{{ serve.title }}</h5>
+                    <p class="mb-0 text-muted">{{ serve.body}}</p>
                   </div>
             {% endfor %}
 

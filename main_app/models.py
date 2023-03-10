@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class DishCategory(models.Model):
@@ -52,20 +53,39 @@ class About(models.Model):
 		return f'{self.title}'
 
 class Service(models.Model):
+	service_element = [
+		('M', 'clean environment'),
+		('E', 'sexpert chefs'),
+		('F', 'tasty food'),
+	]
 	is_visible = models.BooleanField(default=True)
-	title_clean_environment = models.CharField(max_length=100, unique=True)
-	body_clean_environment = models.TextField(max_length=4000, unique=True)
-	title_expert_chefs = models.CharField(max_length=100, unique=True)
-	body_expert_chefs = models.TextField(max_length=4000, unique=True)
-	title_tasty_food = models.CharField(max_length=100, unique=True)
-	body_tasty_food = models.TextField(max_length=4000, unique=True)
+	title = models.CharField(max_length=100, unique=True)
+	body = models.TextField(max_length=4000, unique=False)
+	position = models.CharField(max_length=2, choices=service_element, default='M')
 
 	def __str__(self):
-		return 'Service'
+		return f'{self.title}'
+	class Meta:
+		ordering = ('-position', )
 
 class Galerys(models.Model):
 	photo = models.ImageField(upload_to='dishes')
 	is_visible = models.BooleanField(default=True)
 
+class Rezervation(models.Model):
+	phone_validator = RegexValidator(regex='^+?3?8?0?\d{2}[ -]?(\d[ -]?){7}$',
+									 message='the number should have the following format: +380xx xxx xx xx')
+	name = models.CharField(max_length=100)
+	email = models.EmailField()
+	phone = models.CharField(max_length=16, validators=(phone_validator, ))
+	date = models.DateTimeField()
+	date_request = models.DateTimeField(auto_now_add=True)
+	date_response = models.DateTimeField(auto_now=True)
+	quests = models.PositiveSmallIntegerField()
+	message = models.TextField(max_length=1000, blank=True)
+	is_processed = models.BooleanField(default=False)
+
+	class Meta:
+		ordering = ('-date_request', )
 	def __str__(self):
-		return 'Photo from galery'
+		return f'{self.name}\t{self.phone}\t{self.email}'
