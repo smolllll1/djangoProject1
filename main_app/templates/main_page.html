@@ -2,58 +2,13 @@
 
 {% block main_content %}
         <!-- Reservation Modal-->
-    <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content position-relative">
-          <div class="bg-primary position-absolute top-0 start-0 z-index-top">
-            <button class="btn-close btn-close-white p-3 opacity-10" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body p-5">
-            <header class="mb-5 text-center">
-              <h3 class="handwriting-text">Make a reservation</h3>
-              <h5 class="text-uppercase text-gray-500 fw-normal">Book your table now</h5>
-            </header>
-            <form class="p-lg-5">
-              <div class="row gy-3">
-                <div class="col-lg-6">
-                  <label class="form-label" for="modalResName"> Name</label>
-                  <input class="form-control shadow-0 px-0 border-0 border-bottom" id="modalResName" type="text" name="res_name" required="">
-                </div>
-                <div class="col-lg-6">
-                  <label class="form-label" for="modalResEmail"> Email</label>
-                  <input class="form-control shadow-0 px-0 border-0 border-bottom" id="modalResEmail" type="email" name="res_email" required="">
-                </div>
-                <div class="col-lg-6">
-                  <label class="form-label" for="modalResNumber"> Number</label>
-                  <input class="form-control shadow-0 px-0 border-0 border-bottom" id="modalResNumber" type="number" name="res_number" required="">
-                </div>
-                <div class="col-lg-6">
-                  <label class="form-label" for="modalResPeople"> People</label>
-                  <input class="form-control shadow-0 px-0 border-0 border-bottom" id="modalResPeople" type="number" name="res_people" required="">
-                </div>
-                <div class="col-lg-12">
-                  <label class="form-label" for="modalResDate"> Date & Time</label>
-                  <input class="form-control shadow-0 px-0 border-0 border-bottom" id="modalResDate" type="text" name="res_date" required="">
-                </div>
-                <div class="col-lg-12">
-                  <label class="form-label" for="modalRequest"> Special request</label>
-                  <textarea class="form-control shadow-0 px-0 border-0 border-bottom" id="modalRequest" rows="7" name="res_request" required=""></textarea>
-                </div>
-                <div class="col-lg-12 text-center">
-                  <button class="btn btn-primary" type="submit">Book now</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+   {% include 'reserve_form.html' %}
     <!-- Hero Section-->
     <section class="text-white p-0" id="hero">
       <div class="swiper hero-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide h-auto">
-            <div class="hero-slide bg-center bg-cover" style="background-image: url(static/img/hero-bg.jpg);">
+            <div class="hero-slide bg-center bg-cover" style="background-image: url(/static/img/hero-bg.jpg);">
               <div class="container pe-5">
                 <h2 class="handwriting-text" data-swiper-parallax="-200">This is <span class="text-primary">Italiano restaurant</span></h2>
                 <h1 class="handwriting-text" data-swiper-parallax="-300">Bootstrap Template</h1>
@@ -62,7 +17,7 @@
             </div>
           </div>
           <div class="swiper-slide h-auto">
-            <div class="hero-slide bg-center bg-cover" style="background-image: url(static/img/hero-bg02.jpg);">
+            <div class="hero-slide bg-center bg-cover" style="background-image: url(/static/img/hero-bg02.jpg);">
               <div class="container pe-5">
                 <h1 class="handwriting-text" data-swiper-parallax="-200">lorem ipsum dolor sit amit</h1>
                 <p class="hero-text lh-3" data-swiper-parallax="-400"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
@@ -70,7 +25,7 @@
             </div>
           </div>
           <div class="swiper-slide h-auto">
-            <div class="hero-slide bg-center bg-cover" style="background-image: url(static/img/hero-bg03.jpg);">
+            <div class="hero-slide bg-center bg-cover" style="background-image: url(/static/img/hero-bg03.jpg);">
               <div class="container pe-5">
                 <h2 class="handwriting-text" data-swiper-parallax="-200">Visit <span class="text-primary">italiano restaurant</span></h2>
                 <h1 class="handwriting-text" data-swiper-parallax="-300">lorem ipsum dolor sit amit</h1>
@@ -152,7 +107,7 @@
         <div class="row g-0 bg-white align-items-stretch">
           <!-- Profile Side-->
           <div class="col-lg-6">
-            <div class="dark-overlay p-1 bg-cover bg-center h-100" style="background-image: url(static/img/event-bg.jpg);">
+            <div class="dark-overlay p-1 bg-cover bg-center h-100" style="background-image: url(/static/img/event-bg.jpg);">
               <div class="overlay-content border border-2 border-white text-white p-5 h-100">
                 <div class="d-flex align-items-center">
                   <div class="icon icon-md rounded-0 border-2 border-white me-3">
@@ -201,37 +156,38 @@
                         <h3 class="handwriting-text">Make a reservation</h3>
                         <h5 class="text-uppercase text-gray-500 fw-normal">Book your table now</h5>
                       </header>
-                      <form>
-                        <div class="row gy-3">
-                          <div class="col-lg-6">
-                            <label class="form-label" for="resName"> Name</label>
-                            <input class="form-control shadow-0 px-0 border-0 border-bottom" id="resName" type="text" name="res_name" required="">
+                        <form class="p-lg-5" method="post">
+                            {% csrf_token %}
+                          <div class="row gy-3">
+                            <div class="col-lg-6">
+                              <label class="form-label" for="modalResName"> Name</label>
+                                {{form_reserve.name }}
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label" for="modalResEmail"> Email</label>
+                                {{ form_reserve.email }}
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label" for="modalResNumber"> Number</label>
+                              {{ form_reserve.phone }}
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label" for="modalResPeople"> People</label>
+                              {{ form_reserve.quests }}
+                            </div>
+                            <div class="col-lg-12">
+                              <label class="form-label" for="modalResDate"> Date & Time</label>
+                              {{ form_reserve.visit_datetime }}
+                            </div>
+                            <div class="col-lg-12">
+                              <label class="form-label" for="modalRequest"> Special request</label>
+                                {{ form_reserve.message }}
+                            </div>
+                            <div class="col-lg-12 text-center">
+                              <button class="btn btn-primary" type="submit">Book now</button>
+                            </div>
                           </div>
-                          <div class="col-lg-6">
-                            <label class="form-label" for="resEmail"> Email</label>
-                            <input class="form-control shadow-0 px-0 border-0 border-bottom" id="resEmail" type="email" name="res_email" required="">
-                          </div>
-                          <div class="col-lg-6">
-                            <label class="form-label" for="resNumber"> Number</label>
-                            <input class="form-control shadow-0 px-0 border-0 border-bottom" id="resNumber" type="number" name="res_number" required="">
-                          </div>
-                          <div class="col-lg-6">
-                            <label class="form-label" for="resPeople"> People</label>
-                            <input class="form-control shadow-0 px-0 border-0 border-bottom" id="resPeople" type="number" name="res_people" required="">
-                          </div>
-                          <div class="col-lg-12">
-                            <label class="form-label" for="resDate"> Date & Time</label>
-                            <input class="form-control shadow-0 px-0 border-0 border-bottom" id="resDate" type="text" name="res_date" required="">
-                          </div>
-                          <div class="col-lg-12">
-                            <label class="form-label" for="request"> Special request</label>
-                            <textarea class="form-control shadow-0 px-0 border-0 border-bottom" id="request" rows="7" name="res_request" required=""></textarea>
-                          </div>
-                          <div class="col-lg-12 text-center">
-                            <button class="btn btn-primary" type="submit">Book now</button>
-                          </div>
-                        </div>
-                      </form>
+                        </form>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DishCategory, Dish, About, Service, Galerys
+from .models import DishCategory, Dish, About, Service, Galerys, Reservation
 
 # Register your models here.
 
@@ -7,6 +7,7 @@ from .models import DishCategory, Dish, About, Service, Galerys
 #admin.site.register(About)
 #admin.site.register(Service)
 #admin.site.register(Galerys)
+admin.site.register(Reservation)
 
 # @admin.register(Dish)
 # class DishAdmin(admin.ModelAdmin):
