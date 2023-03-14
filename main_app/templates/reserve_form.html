@@ -28,9 +28,13 @@
                   <label class="form-label" for="modalResPeople"> People</label>
                   {{ form_reserve.quests }}
                 </div>
-                <div class="col-lg-12">
-                  <label class="form-label" for="modalResDate"> Date & Time</label>
-                  {{ form_reserve.visit_datetime }}
+                <div class="col-lg-6">
+                  <label class="form-label" for="modalResDate">Date</label>
+                  {{ form_reserve.visit_date }}
+                </div>
+                 <div class="col-lg-6">
+                  <label class="form-label" for="modalResDate">Time</label>
+                     {{ form_reserve.visit_time }}
                 </div>
                 <div class="col-lg-12">
                   <label class="form-label" for="modalRequest"> Special request</label>

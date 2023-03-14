@@ -78,7 +78,8 @@ class Reservation(models.Model):
 	name = models.CharField(max_length=100)
 	email = models.EmailField()
 	phone = models.CharField(max_length=16, validators=(phone_validator, ))
-	visit_datetime = models.DateTimeField()
+	visit_date = models.DateField()
+	visit_time = models.TimeField()
 	date_request = models.DateTimeField(auto_now_add=True)
 	date_response = models.DateTimeField(auto_now=True)
 	quests = models.CharField(max_length=10)
@@ -86,6 +87,6 @@ class Reservation(models.Model):
 	is_processed = models.BooleanField(default=False)
 
 	class Meta:
-		ordering = ('-visit_datetime', )
+		ordering = ('-date_response', )
 	def __str__(self):
 		return f'{self.name}\t{self.phone}\t{self.email}'
