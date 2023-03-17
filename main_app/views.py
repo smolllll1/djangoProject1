@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import DishCategory, Dish, About, Service, Galerys
+from .models import DishCategory, Dish, About, Service, Galerys, Events
 from .forms import ReservationForm
 # Create your views here.
 def main_view(request):
@@ -18,6 +18,7 @@ def main_view(request):
 	servis = Service.objects.filter(is_visible=True)
 	galerys = Galerys.objects.filter(is_visible=True)
 	form_reserve = ReservationForm()
+	events = Events.objects.filter(is_visible=True)
 
 	return render(request, 'main_page.html', context={
 		'categories': categories,
@@ -28,5 +29,6 @@ def main_view(request):
 		'servis': servis,
 		'galerys': galerys,
 		'form_reserve': form_reserve,
+		'events': events,
 	})
 

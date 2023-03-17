@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DishCategory, Dish, About, Service, Galerys, Reservation
+from .models import DishCategory, Dish, About, Service, Galerys, Reservation, Events
 
 # Register your models here.
 
@@ -7,7 +7,8 @@ from .models import DishCategory, Dish, About, Service, Galerys, Reservation
 #admin.site.register(About)
 #admin.site.register(Service)
 #admin.site.register(Galerys)
-admin.site.register(Reservation)
+#admin.site.register(Reservation)
+admin.site.register(Events)
 
 # @admin.register(Dish)
 # class DishAdmin(admin.ModelAdmin):
@@ -52,3 +53,9 @@ class Servicy(admin.ModelAdmin):
 	list_display = ['title', 'position', 'is_visible']
 	list_filter = ['is_visible']
 	list_editable = ['position', 'is_visible']
+
+@admin.register(Reservation)
+class Reservat(admin.ModelAdmin):
+	list_display = ['name', 'phone', 'visit_date', 'visit_time', 'is_processed']
+	list_filter = ['is_processed', 'visit_date', 'name']
+	list_editable = ['phone', 'visit_date', 'visit_time', 'is_processed']

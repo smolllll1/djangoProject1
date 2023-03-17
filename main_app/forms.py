@@ -12,11 +12,11 @@ class ReservationForm(forms.ModelForm):
                                                                          'type': "text",
                                                                          'name': "res_name",
                                                                          'required': "",
-                                                                         }))
+                                                                                          }))
     email = forms.EmailField(widget=forms.TextInput(attrs={'class': "form-control shadow-0 px-0 border-0 border-bottom",
                                                            'id': "resEmail",
                                                            'type': "email",
-                                                           'name': "res_email",
+                                                            'name': "res_email",
                                                            'required': "",
                                                            }))
     phone = forms.CharField(max_length=16, widget=forms.TextInput(attrs={'class': "form-control shadow-0 px-0 border-0 border-bottom",
@@ -57,11 +57,11 @@ class ReservationForm(forms.ModelForm):
                                                                                 'required': "",
                                                                                 }))
     quests = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': "form-control shadow-0 px-0 border-0 border-bottom",
-                                                                 'id': "resPeople",
-                                                                 'type': "number",
-                                                                 "name": "res_people",
-                                                                 'required': "",
-                                                                 }))
+                                                                             'id': "resPeople",
+                                                                             'type': "number",
+                                                                             "name": "res_people",
+                                                                             'required': "",
+                                                                             }))
     message = forms.CharField(max_length=1000, widget=forms.Textarea(attrs={'class': "form-control shadow-0 px-0 border-0 border-bottom",
                                                                             'id': "request",
                                                                             'rows': "7",

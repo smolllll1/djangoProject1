@@ -72,11 +72,27 @@ class Galerys(models.Model):
 	photo = models.ImageField(upload_to='dishes')
 	is_visible = models.BooleanField(default=True)
 
+class Events(models.Model):
+	title = models.CharField(max_length=100, unique=True)
+	photo = models.ImageField(upload_to='dishes')
+	is_visible = models.BooleanField(default=True)
+	date = models.DateField()
+	time = models.TimeField()
+	message = models.TextField(max_length=1000, blank=True)
+
+	def __str__(self):
+		return f'{self.title}'
+
+	class Meta:
+		ordering = ('date', )
+
+
 class Reservation(models.Model):
 	phone_validator = RegexValidator(regex='^\+?3?8?0?\d{2}[ -]?(\d[ -]?){7}$',
 									 message='the number should have the following format: +380xx xxx xx xx')
+	email_validator = RegexValidator(regex='^\w+(_?\w*)*-?\w*(_?\w*)*@\w+(\.\w*)+$', message='xxxxxx@xxxxxx')
 	name = models.CharField(max_length=100)
-	email = models.EmailField()
+	email = models.CharField(max_length=100, validators=(email_validator, ))
 	phone = models.CharField(max_length=16, validators=(phone_validator, ))
 	visit_date = models.DateField()
 	visit_time = models.TimeField()
